@@ -41,7 +41,7 @@ class TopSection extends StatelessWidget {
                               fontSize: 32,
                               color: AppColors.lotion,
                               letterSpacing: 1.25,
-                              height: 0.85,
+                              height: 1,
                             ),
                           ),
                           SizedBox(height: 16),

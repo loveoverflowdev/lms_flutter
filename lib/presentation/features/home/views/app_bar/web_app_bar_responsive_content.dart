@@ -46,26 +46,26 @@ class WebAppBarResponsiveContent extends StatelessWidget {
                   ),
                 ),
               ),
-              if (constraints.maxWidth >= Breakpoints.showOnlyLearn) ...[
-                const SizedBox(width: 24),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    LocalizedTexts.learn,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.cultured,
-                      letterSpacing: 1.1,
-                    ),
-                  ),
-                ),
-              ],
+              // if (constraints.maxWidth >= Breakpoints.showOnlyLearn) ...[
+              //   const SizedBox(width: 24),
+              //   TextButton(
+              //     onPressed: () {},
+              //     child: const Text(
+              //       LocalizedTexts.learn,
+              //       style: TextStyle(
+              //         fontWeight: FontWeight.w600,
+              //         color: AppColors.cultured,
+              //         letterSpacing: 1.1,
+              //       ),
+              //     ),
+              //   ),
+              // ],
               if (constraints.maxWidth >= Breakpoints.showFlutterButton) ...[
                 const SizedBox(width: 8),
                 TextButton(
                   onPressed: () {},
                   child: const Text(
-                    LocalizedTexts.flutter,
+                    LocalizedTexts.cskh,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: AppColors.cultured,

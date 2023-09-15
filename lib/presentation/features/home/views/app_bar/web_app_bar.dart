@@ -21,7 +21,7 @@ class WebAppBar extends StatelessWidget {
             width: 40,
           ),
           const Text(
-            LocalizedTexts.fludemy,
+            LocalizedTexts.cskh,
             style: TextStyle(fontWeight: FontWeight.w800),
           ),
           const SizedBox(width: 24),
