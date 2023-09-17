@@ -30,7 +30,10 @@ class _CourseSectionState extends State<CourseSection> {
         return BlocBuilder<TopCourseListCubit, TopCourseListState>(
           builder: (context, state) {
             return Visibility(
-              replacement: const LoadingWidget(),
+              replacement: const SizedBox(
+                height: 100,
+                child: Center(child: LoadingWidget()),
+              ),
               visible: state.loadingStatus.isFinished,
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(

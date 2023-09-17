@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lms_flutter/presentation/config/texts/localized_texts.dart';
 
-import '../../../../config/responsive/breakpoints.dart';
-import '../../../../config/theme/colors/app_colors.dart';
+import '../../../config/responsive/breakpoints.dart';
+import '../../../config/theme/colors/app_colors.dart';
 
 class WebAppBarResponsiveContent extends StatelessWidget {
   const WebAppBarResponsiveContent({super.key});
@@ -16,12 +16,13 @@ class WebAppBarResponsiveContent extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  height: 45,
+                  height: 48,
                   decoration: BoxDecoration(
                     color: AppColors.cultured,
                     border: Border.all(
                       color: AppColors.sonicSilver,
                     ),
+                    borderRadius: BorderRadius.circular(48 / 2),
                   ),
                   child: Row(
                     children: [
@@ -68,7 +69,7 @@ class WebAppBarResponsiveContent extends StatelessWidget {
                     LocalizedTexts.cskh,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      color: AppColors.cultured,
+                      color: AppColors.vampireBlack,
                       letterSpacing: 1.1,
                     ),
                   ),

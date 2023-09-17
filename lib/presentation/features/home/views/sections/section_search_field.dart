@@ -10,22 +10,22 @@ class SectionSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       cursorColor: AppColors.blue,
-      style: const TextStyle(color: AppColors.lotion),
+      style: const TextStyle(color: AppColors.vampireBlack),
       decoration: InputDecoration(
         isDense: true,
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: AppColors.lotion,
+            color: AppColors.vampireBlack,
           ),
         ),
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.lotion),
+          borderSide: BorderSide(color: AppColors.vampireBlack),
         ),
-        hintStyle: const TextStyle(color: AppColors.lotion),
+        hintStyle: const TextStyle(color: AppColors.vampireBlack),
         hintText: LocalizedTexts.typeSomeSearchHere,
         suffixIcon: IconButton(
           icon: const Icon(Icons.search),
-          color: AppColors.lotion,
+          color: AppColors.vampireBlack,
           onPressed: () {},
         ),
       ),

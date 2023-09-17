@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:lms_flutter/data/models/products/data_course.dart';
-import 'package:lms_flutter/presentation/config/texts/localized_texts.dart';
 
 import '../../../../../config/theme/colors/app_colors.dart';
 
@@ -28,19 +27,11 @@ class CourseItem extends StatelessWidget {
               course.title ?? '',
               maxLines: 2,
               presetFontSizes: const [16, 14, 12],
-              overflowReplacement: const Text(
-                LocalizedTexts.responsiveness,
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  color: AppColors.cultured,
-                  fontSize: 16,
-                  height: 2,
-                ),
-              ),
+              overflow: TextOverflow.clip,
               style: const TextStyle(
                 fontWeight: FontWeight.w800,
                 fontSize: 16,
-                color: AppColors.cultured,
+                color: AppColors.vampireBlack,
               ),
             );
           },
@@ -61,7 +52,7 @@ class CourseItem extends StatelessWidget {
             style: const TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 12,
-              color: AppColors.cultured,
+              color: AppColors.vampireBlack,
             ),
           ),
       ],

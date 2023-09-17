@@ -1,11 +1,14 @@
 class LocalizedTexts {
-  static const app = 'CSKH | Courses';
+  // General
+  static const app = 'CSKH | Khóa học';
   static const cskh = 'CSKH';
-  static const loginSpaced = '  Log in  ';
-  static const signUpSpaced = '  Sign up  ';
-  static const responsivenessInTheFlutterPlatforms =
-      'Responsiveness in the Flutter | '
-      'Mobile, Tablet, Web and Desktop';
+
+  // Auth
+  static const login = 'Đăng nhập';
+  static const signUp = 'Đăng ký';
+  static const loginToCSKH = 'Đăng nhập vào Chia sẻ khóa học';
+
+  //
   static const responsiveness = 'Responsiveness';
   static const danielCiolfiAndFelipeSales = 'Daniel Ciolfi and Felipe Sales';
   static const price22dot90 = 'R\$22,90';
@@ -13,8 +16,8 @@ class LocalizedTexts {
       'Let\'s develop ourselves with the following courses';
   static const theFlutterIsAmazing = 'The Flutter is amazing! '
       'Create amazing things with the Flutter Framework.';
-  static const typeSomeSearchHere = 'Type some search here';
-  static const searchForAnythingSpaced = ' Search for anything... ';
+  static const typeSomeSearchHere = 'Nhập từ khóa của bạn';
+  static const searchForAnythingSpaced = ' Tìm kiếm khóa học ... ';
   static const moreThan100kDevelopers = '+100.000 developers';
   static const awesomeExclamation = 'Awesome!';
   static const certificateOfComplete = 'Certificate of Complete';

@@ -27,7 +27,7 @@ class TopSection extends StatelessWidget {
                   top: 56,
                   left: 50,
                   child: Card(
-                    color: AppColors.black87,
+                    color: AppColors.cultured,
                     elevation: 16,
                     child: Container(
                       padding: const EdgeInsets.all(24),
@@ -39,7 +39,7 @@ class TopSection extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: 32,
-                              color: AppColors.lotion,
+                              color: AppColors.vampireBlack,
                               letterSpacing: 1.25,
                               height: 1,
                             ),
@@ -50,7 +50,7 @@ class TopSection extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: 16,
-                              color: AppColors.cultured,
+                              color: AppColors.vampireBlack,
                               letterSpacing: 1.1,
                             ),
                           ),
@@ -91,7 +91,7 @@ class TopSection extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: 28,
-                              color: AppColors.lotion,
+                              color: AppColors.vampireBlack,
                               letterSpacing: 1.2,
                             ),
                           ),
@@ -101,7 +101,7 @@ class TopSection extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
-                              color: AppColors.cultured,
+                              color: AppColors.vampireBlack,
                             ),
                           ),
                           SizedBox(height: 16),
@@ -131,7 +131,7 @@ class TopSection extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 28,
-                      color: AppColors.lotion,
+                      color: AppColors.vampireBlack,
                       letterSpacing: 1.2,
                     ),
                   ),
@@ -142,7 +142,7 @@ class TopSection extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 16,
-                      color: AppColors.cultured,
+                      color: AppColors.vampireBlack,
                       letterSpacing: 1.1,
                     ),
                   ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../config/assets/app_assets.dart';
-import '../../../../config/theme/colors/app_colors.dart';
+import '../../../config/assets/app_assets.dart';
+import '../../../config/theme/colors/app_colors.dart';
 
 class MobileAppBar extends StatelessWidget {
   const MobileAppBar({super.key});
