@@ -1,6 +1,6 @@
 class Breakpoints {
-  static const mobileBreakpoint = 650;
-  static const tabletMedium = 1000;
-  static const showOnlyLearn = 320;
-  static const showFlutterButton = 500;
+  static const double mobileBreakpoint = 650;
+  static const double tabletMedium = 1000;
+  static const double showOnlyLearn = 320;
+  static const double showFlutterButton = 500;
 }

@@ -5,6 +5,7 @@ class DataCustomer extends DataUser {
   final String phoneNumber;
   final String displayName;
   final String affilicateCode;
+  final String email;
 
   DataCustomer({
     required super.id,
@@ -13,6 +14,7 @@ class DataCustomer extends DataUser {
     required this.phoneNumber,
     required this.displayName,
     required this.affilicateCode,
+    required this.email,
   });
 
   factory DataCustomer.fromMap(Map<String, dynamic> json) {
@@ -23,6 +25,7 @@ class DataCustomer extends DataUser {
       phoneNumber: json['phoneNumber'],
       displayName: json['displayName'],
       affilicateCode: json['affilicateCode'],
+      email: json['email'],
     );
   }
 
@@ -34,6 +37,7 @@ class DataCustomer extends DataUser {
       phoneNumber: phoneNumber,
       displayName: displayName,
       affilicateCode: affilicateCode,
+      email: email,
     );
   }
 }

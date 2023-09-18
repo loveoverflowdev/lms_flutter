@@ -1,14 +1,16 @@
 import 'package:go_router/go_router.dart';
+import 'package:lms_customer_app/ui/profile/profile_page.dart';
 
 import '../../ui/auth/login/login_page.dart';
 import '../../ui/auth/signup/signup_page.dart';
+import '../../ui/home/home_page.dart';
 import '../page_transition/page_transition.dart';
-import '../../ui/home/views/home_page.dart';
 
 class AppRouter {
   static const home = '/home';
   static const login = '/login';
   static const signup = '/signup';
+  static const profile = '/profile';
 
   static final GoRouter router = GoRouter(
     initialLocation: home,
@@ -16,14 +18,8 @@ class AppRouter {
       GoRoute(
         path: home,
         pageBuilder: (context, state) {
-          final AuthorizedHomeParams? customerAuthorizedHomeParams =
-              state.extra is AuthorizedHomeParams
-                  ? state.extra as AuthorizedHomeParams
-                  : null;
           return PageTransition.fade(
-            page: HomePage(
-              customerAuthorizedHomeParams: customerAuthorizedHomeParams,
-            ),
+            page: const HomePage(),
           );
         },
       ),
@@ -40,6 +36,14 @@ class AppRouter {
         pageBuilder: (context, state) {
           return PageTransition.fade(
             page: const SignupPage(),
+          );
+        },
+      ),
+      GoRoute(
+        path: profile,
+        pageBuilder: (context, state) {
+          return PageTransition.fade(
+            page: const ProfilePage(),
           );
         },
       ),

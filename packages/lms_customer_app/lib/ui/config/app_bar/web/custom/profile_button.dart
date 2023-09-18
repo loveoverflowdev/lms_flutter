@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lms_customer_app/view_models/login/login_cubit.dart';
-import 'package:lms_customer_app/view_models/login/login_state.dart';
+import 'package:go_router/go_router.dart';
+import 'package:lms_customer_app/config/app/app_router.dart';
 import 'package:text_avatar/text_avatar.dart';
+
+import '../../../../../view_models/auth/auth_cubit.dart';
+import '../../../../../view_models/auth/auth_state.dart';
+
+extension ProfileButtonAction on ProfileButton {
+  void routeToProfilePage(BuildContext context) {
+    context.go(AppRouter.profile);
+  }
+}
 
 class ProfileButton extends StatelessWidget {
   const ProfileButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginCubit, LoginState>(
+    return BlocBuilder<AuthCubit, AuthState>(
       buildWhen: (previous, current) =>
           previous.isAuthoried != current.isAuthoried,
       builder: (context, state) {
@@ -17,10 +26,13 @@ class ProfileButton extends StatelessWidget {
         final customer = state.loginResult?.customer;
         return Visibility(
           visible: isAuthorized,
-          child: TextAvatarWidget(
-            shape: Shape.circular,
-            size: 48,
-            text: customer?.displayName,
+          child: GestureDetector(
+            onTap: () => routeToProfilePage(context),
+            child: TextAvatarWidget(
+              shape: Shape.circular,
+              size: 48,
+              text: customer?.displayName,
+            ),
           ),
         );
       },

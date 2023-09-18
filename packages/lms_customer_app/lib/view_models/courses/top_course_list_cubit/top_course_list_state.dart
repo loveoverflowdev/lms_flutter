@@ -2,7 +2,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:lms_domain/domain/entities/customer_entities.dart';
 
-import '../../../../config/status/loading_status.dart';
+import '../../../config/status/loading_status.dart';
 
 class TopCourseListState extends Equatable {
   final LoadingStatus loadingStatus;

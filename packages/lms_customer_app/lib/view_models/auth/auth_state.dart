@@ -3,9 +3,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:lms_domain/domain/entities/auth/customer_login_result.dart';
 
-import '../../config/status/loading_status.dart';
+import '../../../config/status/loading_status.dart';
 
-class LoginState extends Equatable {
+class AuthState extends Equatable {
   bool get isAuthoried => loginResult?.accessToken.isNotEmpty == true;
   final LoadingStatus loadingStatus;
   final CustomerLoginResult? loginResult;
@@ -14,7 +14,7 @@ class LoginState extends Equatable {
   final String usernameOrEmail;
   final String password;
 
-  const LoginState({
+  const AuthState({
     this.loadingStatus = LoadingStatus.pure,
     this.loginResult,
     this.message = '',
@@ -32,14 +32,14 @@ class LoginState extends Equatable {
         password,
       ];
 
-  LoginState copyWith({
+  AuthState copyWith({
     LoadingStatus? loadingStatus,
     CustomerLoginResult? loginResult,
     String? message,
     String? usernameOrEmail,
     String? password,
   }) {
-    return LoginState(
+    return AuthState(
       loadingStatus: loadingStatus ?? this.loadingStatus,
       loginResult: loginResult ?? this.loginResult,
       message: message ?? this.message,
@@ -57,8 +57,8 @@ class LoginState extends Equatable {
     };
   }
 
-  factory LoginState.fromMap(Map<String, dynamic> map) {
-    return LoginState(
+  factory AuthState.fromMap(Map<String, dynamic> map) {
+    return AuthState(
       loadingStatus: LoadingStatus.pure,
       loginResult: map['loginResult'] != null
           ? CustomerLoginResult.fromMap(map['loginResult'])

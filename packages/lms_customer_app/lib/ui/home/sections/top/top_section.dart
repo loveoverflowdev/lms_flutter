@@ -35,7 +35,7 @@ class TopSection extends StatelessWidget {
                       child: const Column(
                         children: [
                           Text(
-                            LocalizedTexts.letsLearnFlutterWithTheseCourses,
+                            LocalizedTexts.slogan,
                             style: TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: 32,
@@ -46,7 +46,7 @@ class TopSection extends StatelessWidget {
                           ),
                           SizedBox(height: 16),
                           Text(
-                            LocalizedTexts.theFlutterIsAmazing,
+                            LocalizedTexts.homeDescription,
                             style: TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: 16,
@@ -87,7 +87,7 @@ class TopSection extends StatelessWidget {
                       child: const Column(
                         children: [
                           Text(
-                            LocalizedTexts.letsLearnFlutterWithTheseCourses,
+                            LocalizedTexts.slogan,
                             style: TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: 28,
@@ -97,7 +97,7 @@ class TopSection extends StatelessWidget {
                           ),
                           SizedBox(height: 12),
                           Text(
-                            LocalizedTexts.theFlutterIsAmazing,
+                            LocalizedTexts.homeDescription,
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
@@ -126,7 +126,7 @@ class TopSection extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    LocalizedTexts.letsLearnFlutterWithTheseCourses,
+                    LocalizedTexts.slogan,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
@@ -137,7 +137,7 @@ class TopSection extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    LocalizedTexts.theFlutterIsAmazing,
+                    LocalizedTexts.homeDescription,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,

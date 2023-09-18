@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lms_domain/data/repositories/repositories.dart';
 
-import '../../../../config/status/loading_status.dart';
+import '../../../config/status/loading_status.dart';
 import 'top_course_list_state.dart';
 
 class TopCourseListCubit extends Cubit<TopCourseListState> {

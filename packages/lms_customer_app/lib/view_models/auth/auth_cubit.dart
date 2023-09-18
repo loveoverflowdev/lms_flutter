@@ -1,16 +1,16 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:lms_domain/domain/use_cases/customer_use_cases.dart';
 
-import '../../config/status/loading_status.dart';
-import 'login_state.dart';
+import '../../../config/status/loading_status.dart';
+import 'auth_state.dart';
 
-class LoginCubit extends HydratedCubit<LoginState> {
+class AuthCubit extends HydratedCubit<AuthState> {
   final CustomerLoginUseCase _loginUseCase;
 
-  LoginCubit({
+  AuthCubit({
     required final CustomerLoginUseCase loginUseCase,
   })  : _loginUseCase = loginUseCase,
-        super(const LoginState());
+        super(const AuthState());
 
   void changeUsernameOrEmail(String usernameOrEmail) {
     emit(state.copyWith(usernameOrEmail: usernameOrEmail));
@@ -40,13 +40,23 @@ class LoginCubit extends HydratedCubit<LoginState> {
     emit(state.copyWith(loadingStatus: LoadingStatus.finish));
   }
 
-  @override
-  LoginState? fromJson(Map<String, dynamic> json) {
-    return LoginState.fromMap(json);
+  void logOut() {
+    emit(state.copyWith(loadingStatus: LoadingStatus.loading));
+    emit(
+      const AuthState(
+        loadingStatus: LoadingStatus.pure,
+        loginResult: null,
+      ),
+    );
   }
 
   @override
-  Map<String, dynamic>? toJson(LoginState state) {
+  AuthState? fromJson(Map<String, dynamic> json) {
+    return AuthState.fromMap(json);
+  }
+
+  @override
+  Map<String, dynamic>? toJson(AuthState state) {
     return state.toMap();
   }
 }

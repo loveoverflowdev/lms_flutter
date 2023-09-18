@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lms_domain/domain/entities/customer_entities.dart';
 
 import '../../../config/responsive/breakpoints.dart';
-import '../../config/app_bar/mobile/mobile_app_bar.dart';
-import '../../config/app_bar/web/web_app_bar.dart';
-import '../cubits/top_course_list_cubit/top_course_list_cubit.dart';
+import '../../../view_models/courses/top_course_list_cubit/top_course_list_cubit.dart';
+import '../config/app_bar/mobile/mobile_app_bar.dart';
+import '../config/app_bar/web/web_app_bar.dart';
 import 'home_view.dart';
 
 class AuthorizedHomeParams {

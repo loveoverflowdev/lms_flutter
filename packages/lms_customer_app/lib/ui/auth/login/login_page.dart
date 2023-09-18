@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../config/app_bar/web/web_app_bar.dart';
 import 'login_view.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,8 +7,16 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const LoginView(),
+    return const Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            WebAppBar(),
+            SizedBox(height: 24),
+            LoginView(),
+          ],
+        ),
+      ),
     );
   }
 }

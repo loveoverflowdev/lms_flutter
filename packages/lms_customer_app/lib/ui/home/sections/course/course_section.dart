@@ -4,8 +4,8 @@ import 'package:lms_customer_app/config/status/loading_status.dart';
 
 import '../../../../../config/responsive/breakpoints.dart';
 import '../../../../../config/widgets/loading_widget.dart';
-import '../../../cubits/top_course_list_cubit/top_course_list_cubit.dart';
-import '../../../cubits/top_course_list_cubit/top_course_list_state.dart';
+import '../../../../../view_models/courses/top_course_list_cubit/top_course_list_cubit.dart';
+import '../../../../../view_models/courses/top_course_list_cubit/top_course_list_state.dart';
 import 'course_item.dart';
 
 class CourseSection extends StatefulWidget {

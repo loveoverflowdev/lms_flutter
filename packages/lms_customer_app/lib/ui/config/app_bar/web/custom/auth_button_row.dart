@@ -8,8 +8,8 @@ import 'package:go_router/go_router.dart';
 import '../../../../../config/app/app_router.dart';
 import '../../../../../config/texts/localized_texts.dart';
 import '../../../../../config/theme/colors/app_colors.dart';
-import '../../../../../view_models/login/login_cubit.dart';
-import '../../../../../view_models/login/login_state.dart';
+import '../../../../../view_models/auth/auth_cubit.dart';
+import '../../../../../view_models/auth/auth_state.dart';
 
 extension AuthButtonRowActions on AuthButtonRow {
   void routeToLoginPage(BuildContext context) {
@@ -34,7 +34,7 @@ class AuthButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginCubit, LoginState>(
+    return BlocBuilder<AuthCubit, AuthState>(
       buildWhen: (previous, current) =>
           previous.isAuthoried != current.isAuthoried,
       builder: (context, state) {
@@ -43,7 +43,7 @@ class AuthButtonRow extends StatelessWidget {
           visible: !isAuthoried,
           child: Builder(builder: (context) {
             final textLength =
-                max(LocalizedTexts.login.length, LocalizedTexts.login.length);
+                max(LocalizedTexts.logIn.length, LocalizedTexts.logIn.length);
             return Row(
               children: [
                 SizedBox(
@@ -60,7 +60,7 @@ class AuthButtonRow extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      padCenter(LocalizedTexts.login, textLength),
+                      padCenter(LocalizedTexts.logIn, textLength),
                       style: const TextStyle(
                         fontWeight: FontWeight.w600,
                         color: AppColors.vampireBlack,

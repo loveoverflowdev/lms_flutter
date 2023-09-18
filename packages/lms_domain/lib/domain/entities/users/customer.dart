@@ -4,6 +4,7 @@ class Customer extends User {
   final String phoneNumber;
   final String displayName;
   final String affilicateCode;
+  final String email;
 
   Customer({
     required super.id,
@@ -12,6 +13,7 @@ class Customer extends User {
     required this.phoneNumber,
     required this.displayName,
     required this.affilicateCode,
+    required this.email,
   });
 
   factory Customer.fromMap(Map<String, dynamic> json) {
@@ -22,6 +24,7 @@ class Customer extends User {
       phoneNumber: json['phoneNumber'],
       displayName: json['displayName'],
       affilicateCode: json['affilicateCode'],
+      email: json['email'],
     );
   }
 
@@ -33,6 +36,7 @@ class Customer extends User {
       'phoneNumber': phoneNumber,
       'displayName': displayName,
       'affilicateCode': affilicateCode,
+      'email': email,
     };
   }
 
@@ -45,5 +49,6 @@ class Customer extends User {
         password,
         phoneNumber,
         affilicateCode,
+        email,
       ];
 }
