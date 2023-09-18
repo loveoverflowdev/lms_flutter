@@ -1,4 +1,4 @@
-import '../../../domain/entities/auth/customer.dart';
+import '../../../domain/entities/users/customer.dart';
 import 'base/data_user.dart';
 
 class DataCustomer extends DataUser {

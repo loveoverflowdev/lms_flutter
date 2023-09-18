@@ -2,8 +2,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../core/use_case/use_case.dart';
-
-import '../../entities/auth/customer.dart';
+import '../../entities/auth/customer_login_result.dart';
 import '../../repositories/auth/auth_repository.dart';
 
 class CustomerLoginParams {
@@ -16,7 +15,8 @@ class CustomerLoginParams {
   });
 }
 
-class CustomerLoginUseCase extends UseCase<Customer, CustomerLoginParams> {
+class CustomerLoginUseCase
+    extends UseCase<CustomerLoginResult, CustomerLoginParams> {
   final AuthRepository _authRepository;
 
   CustomerLoginUseCase({
@@ -24,7 +24,8 @@ class CustomerLoginUseCase extends UseCase<Customer, CustomerLoginParams> {
   }) : _authRepository = authRepository;
 
   @override
-  Future<Either<Customer, Exception>> call(CustomerLoginParams params) {
+  Future<Either<CustomerLoginResult, Exception>> call(
+      CustomerLoginParams params) {
     return _authRepository.customerLogIn(
       usernameOrEmail: params.usernameOrEmail,
       password: params.password,

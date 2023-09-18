@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth/login/views/login_page.dart';
-import '../../features/auth/signup/views/signup_page.dart';
+import '../../ui/auth/login/login_page.dart';
+import '../../ui/auth/signup/signup_page.dart';
 import '../page_transition/page_transition.dart';
-import '../../features/home/views/home_page.dart';
+import '../../ui/home/views/home_page.dart';
 
 class AppRouter {
   static const home = '/home';

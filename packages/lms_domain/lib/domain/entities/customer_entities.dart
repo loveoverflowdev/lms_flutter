@@ -1,2 +1,2 @@
 export 'products/course.dart';
-export 'auth/customer.dart';
+export 'users/customer.dart';

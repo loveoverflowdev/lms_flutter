@@ -1,0 +1,105 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "lms_flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "lms_flutter (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "lms_flutter (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "lms_admin_app",
+            "cwd": "packages\\lms_admin_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "lms_admin_app (profile mode)",
+            "cwd": "packages\\lms_admin_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "lms_admin_app (release mode)",
+            "cwd": "packages\\lms_admin_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "lms_customer_app",
+            "cwd": "packages\\lms_customer_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "lms_customer_app (profile mode)",
+            "cwd": "packages\\lms_customer_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "lms_customer_app (release mode)",
+            "cwd": "packages\\lms_customer_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "lms_domain",
+            "cwd": "packages\\lms_domain",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "lms_domain (profile mode)",
+            "cwd": "packages\\lms_domain",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "lms_domain (release mode)",
+            "cwd": "packages\\lms_domain",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "text_avatar",
+            "cwd": "packages\\text_avatar",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "text_avatar (profile mode)",
+            "cwd": "packages\\text_avatar",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "text_avatar (release mode)",
+            "cwd": "packages\\text_avatar",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
