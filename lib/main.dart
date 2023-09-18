@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:lms_flutter/presentation/config/app/app.dart';
+import 'presentation/config/app/runner.dart' as runner;
 
 void main() {
-  runApp(const App());
+  runner.run();
 }

@@ -1,4 +1,8 @@
-class DataCourse {
+import 'package:lms_flutter/domain/entities/products/course.dart';
+
+import '../base/data_model.dart';
+
+class DataCourse extends DataModel {
   String? id;
   String? title;
   String? instructor;
@@ -37,5 +41,18 @@ class DataCourse {
     data['primaryCoins'] = primaryCoins;
     data['secondaryCoins'] = secondaryCoins;
     return data;
+  }
+
+  @override
+  Course toEntity() {
+    return Course(
+      id: id ?? '',
+      title: title ?? '',
+      instructor: instructor ?? '',
+      coverImage: coverImage ?? '',
+      description: description ?? '',
+      primaryCoins: primaryCoins ?? 0,
+      secondaryCoins: secondaryCoins,
+    );
   }
 }

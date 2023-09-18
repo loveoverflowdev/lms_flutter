@@ -1,13 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 
-import 'package:lms_flutter/data/models/products/data_course.dart';
-
+import '../../../../../domain/entities/products/course.dart';
 import '../../../../config/status/loading_status.dart';
 
 class TopCourseListState extends Equatable {
   final LoadingStatus loadingStatus;
-  final List<DataCourse> courseList;
+  final List<Course> courseList;
   final String message;
 
   const TopCourseListState({
@@ -18,7 +17,7 @@ class TopCourseListState extends Equatable {
 
   TopCourseListState copyWith({
     LoadingStatus? loadingStatus,
-    List<DataCourse>? courseList,
+    List<Course>? courseList,
     String? message,
   }) {
     return TopCourseListState(

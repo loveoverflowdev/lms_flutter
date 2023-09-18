@@ -1,11 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:lms_flutter/data/models/products/data_course.dart';
 
+import '../../../../../../domain/entities/products/course.dart';
 import '../../../../../config/theme/colors/app_colors.dart';
 
 class CourseItem extends StatelessWidget {
-  final DataCourse course;
+  final Course course;
 
   const CourseItem({
     required this.course,
@@ -24,7 +24,7 @@ class CourseItem extends StatelessWidget {
         LayoutBuilder(
           builder: (context, constraints) {
             return AutoSizeText(
-              course.title ?? '',
+              course.title,
               maxLines: 2,
               presetFontSizes: const [16, 14, 12],
               overflow: TextOverflow.clip,
@@ -37,7 +37,7 @@ class CourseItem extends StatelessWidget {
           },
         ),
         Text(
-          course.description ?? '',
+          course.description,
           maxLines: 2,
           style: const TextStyle(
             overflow: TextOverflow.clip,
@@ -46,22 +46,21 @@ class CourseItem extends StatelessWidget {
             color: AppColors.grayX11,
           ),
         ),
-        if (course.primaryCoins != null)
-          Text(
-            "${course.primaryCoins} Coins",
-            style: const TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 12,
-              color: AppColors.vampireBlack,
-            ),
+        Text(
+          "${course.primaryCoins} Coins",
+          style: const TextStyle(
+            fontWeight: FontWeight.w800,
+            fontSize: 12,
+            color: AppColors.vampireBlack,
           ),
+        ),
       ],
     );
   }
 
   Image _buildCourseCoverImage() {
     return Image.network(
-      course.coverImage ?? '',
+      course.coverImage,
       fit: BoxFit.cover,
     );
   }
