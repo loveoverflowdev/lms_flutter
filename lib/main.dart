@@ -1,5 +1,5 @@
-import 'presentation/config/app/runner.dart' as runner;
+import 'package:lms_customer_app/lms_customer_app.dart';
 
 void main() {
-  runner.run();
+  runLmsCustomerApp();
 }

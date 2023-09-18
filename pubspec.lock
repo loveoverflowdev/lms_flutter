@@ -166,6 +166,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.3"
+  flutter_easyloading:
+    dependency: "direct main"
+    description:
+      name: flutter_easyloading
+      sha256: ba21a3c883544e582f9cc455a4a0907556714e1e9cf0eababfcb600da191d17c
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.5"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -280,6 +288,27 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  lms_admin_app:
+    dependency: "direct main"
+    description:
+      path: "packages/lms_admin_app"
+      relative: true
+    source: path
+    version: "0.0.1"
+  lms_customer_app:
+    dependency: "direct main"
+    description:
+      path: "packages/lms_customer_app"
+      relative: true
+    source: path
+    version: "0.0.1"
+  lms_domain:
+    dependency: transitive
+    description:
+      path: "packages/lms_domain"
+      relative: true
+    source: path
+    version: "0.0.1"
   logger:
     dependency: "direct main"
     description:
