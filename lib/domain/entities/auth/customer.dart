@@ -1,14 +1,11 @@
-import 'package:lms_flutter/domain/entities/base/base_entity.dart';
+import 'base/user.dart';
 
-import '../../../domain/entities/auth/customer.dart';
-import 'base/data_user.dart';
-
-class DataCustomer extends DataUser {
+class Customer extends User {
   final String phoneNumber;
   final String displayName;
   final String affilicateCode;
 
-  DataCustomer({
+  Customer({
     required super.id,
     required super.username,
     super.password,
@@ -17,8 +14,8 @@ class DataCustomer extends DataUser {
     required this.affilicateCode,
   });
 
-  factory DataCustomer.fromMap(Map<String, dynamic> json) {
-    return DataCustomer(
+  Customer fromMap(Map<String, dynamic> json) {
+    return Customer(
       id: json['id'],
       username: json['username'],
       password: json['password'],
@@ -29,13 +26,13 @@ class DataCustomer extends DataUser {
   }
 
   @override
-  Customer toEntity() {
-    return Customer(
-      id: id,
-      username: username,
-      phoneNumber: phoneNumber,
-      displayName: displayName,
-      affilicateCode: affilicateCode,
-    );
-  }
+  List<Object?> get props => [
+        id,
+        username,
+        phoneNumber,
+        displayName,
+        password,
+        phoneNumber,
+        affilicateCode,
+      ];
 }

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lms_flutter/data/repositories/course_repository_impl.dart';
+import 'package:lms_flutter/data/repositories/products/course_repository_impl.dart';
 
 void main() {
   test('Top Course List Test', () async {

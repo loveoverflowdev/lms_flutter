@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:lms_flutter/data/models/products/data_course.dart';
 import 'package:lms_flutter/data/sources/remote/resources/api_uris.dart';
-import 'package:lms_flutter/domain/repositories/course_repository.dart';
+import 'package:lms_flutter/domain/repositories/products/course_repository.dart';
 
-import '../../domain/entities/products/course.dart';
-import '../sources/remote/network_service_mixin.dart';
+import '../../../domain/entities/products/course.dart';
+import '../../sources/remote/network_service_mixin.dart';
 
 class CourseRepositoryImpl
     with NetworkServiceMixin
