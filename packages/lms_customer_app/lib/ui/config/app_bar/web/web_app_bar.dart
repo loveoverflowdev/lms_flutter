@@ -49,7 +49,7 @@ class WebAppBar extends StatelessWidget {
           const SizedBox(width: 12),
           const CartIconButton(),
           const SizedBox(width: 12),
-          const AuthButtonRow(),
+          const CommonElevatedButtonRow(),
           const SizedBox(width: 12),
           const ProfileButton(),
         ],

@@ -37,7 +37,7 @@ class RestClient {
 
   BaseOptions _getDioBaseOption() {
     return BaseOptions(
-      baseUrl: ApiUris.baseApiUrl,
+      baseUrl: ApiUris.base,
       connectTimeout: _timeout,
       receiveTimeout: _timeout,
       contentType: 'application/json',

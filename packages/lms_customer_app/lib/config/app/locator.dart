@@ -18,4 +18,7 @@ void registerUseCases() {
   _getIt.registerSingleton(
     GetCourseListOnTopUseCase(courseRepository: _courseRepository),
   );
+  _getIt.registerSingleton(
+    GetCourseDetailUseCase(courseRepository: _courseRepository),
+  );
 }

@@ -9,7 +9,7 @@ import '../../../config/widgets/loading_widget.dart';
 import '../../../view_models/auth/signup/signup_cubit.dart';
 import '../../../view_models/auth/signup/signup_state.dart';
 
-import '../config/button/auth_button.dart';
+import '../../config/buttons/common_elevated_button.dart';
 import '../config/input_field/auth_input_field.dart';
 
 extension SignupViewActions on SignupView {
@@ -111,7 +111,7 @@ class SignupView extends StatelessWidget {
                       return Visibility(
                         replacement: const LoadingWidget(),
                         visible: state.loadingStatus != LoadingStatus.loading,
-                        child: AuthButton(
+                        child: CommonElevatedButton(
                           onPressed: () {
                             context.read<SignupCubit>().signUp();
                           },

@@ -1,11 +1,11 @@
 class ApiUris {
-  static const baseApiUrl = "http://localhost:8080/api/v1";
+  static const base = "http://localhost:8080/api/v1";
 
   // Courses
-  static const topCourseListUrl = "$baseApiUrl/courses/top";
+  static const topCourseList = "$base/courses/top";
+  static const course = "$base/course";
 
   // Auth
-  static const customerLoginUrl = "$baseApiUrl/authentication/customer/login";
-  static const customerSignupUrl =
-      "$baseApiUrl/authentication/customer/register";
+  static const customerLogin = "$base/authentication/customer/login";
+  static const customerSignup = "$base/authentication/customer/register";
 }

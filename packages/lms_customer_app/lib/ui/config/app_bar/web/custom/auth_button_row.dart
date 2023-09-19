@@ -11,7 +11,7 @@ import '../../../../../config/theme/colors/app_colors.dart';
 import '../../../../../view_models/auth/auth_cubit.dart';
 import '../../../../../view_models/auth/auth_state.dart';
 
-extension AuthButtonRowActions on AuthButtonRow {
+extension CommonElevatedButtonRowActions on CommonElevatedButtonRow {
   void routeToLoginPage(BuildContext context) {
     if (kIsWeb) {
       context.go(AppRouter.login);
@@ -29,8 +29,8 @@ extension AuthButtonRowActions on AuthButtonRow {
   }
 }
 
-class AuthButtonRow extends StatelessWidget {
-  const AuthButtonRow({super.key});
+class CommonElevatedButtonRow extends StatelessWidget {
+  const CommonElevatedButtonRow({super.key});
 
   @override
   Widget build(BuildContext context) {

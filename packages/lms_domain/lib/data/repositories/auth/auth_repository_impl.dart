@@ -14,7 +14,7 @@ class AuthRepositoryImpl with NetworkServiceMixin implements AuthRepository {
     required String password,
   }) async {
     final response = await post(
-      ApiUris.customerLoginUrl,
+      ApiUris.customerLogin,
       data: {
         "usernameOrEmail": usernameOrEmail,
         "password": password,
@@ -44,7 +44,7 @@ class AuthRepositoryImpl with NetworkServiceMixin implements AuthRepository {
     required String phoneNumber,
   }) async {
     final response = await post(
-      ApiUris.customerSignupUrl,
+      ApiUris.customerSignup,
       data: {
         "username": username,
         "email": email,

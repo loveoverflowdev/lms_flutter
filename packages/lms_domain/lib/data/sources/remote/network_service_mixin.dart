@@ -73,13 +73,6 @@ mixin NetworkServiceMixin {
     return _handleResponse(response);
   }
 
-  // Future<Either> fetchHtmlStringFromUrl({
-  //   required String url,
-  // }) async {
-  //   final response = RestClient().getDio().get(url);
-  //   return _handleResponse(response);
-  // }
-
   bool isSuccess(Response<dynamic> response) =>
       response.statusCode != null &&
       response.statusCode! >= 200 &&
@@ -96,7 +89,13 @@ mixin NetworkServiceMixin {
         return Left(response.data);
       } else {
         _logger?.e('DataException: ${response.data}');
-        return Right(HttpException(response.data.toString()));
+        final String? errorResponsedMessage =
+            response.data['status']?['message'];
+        return Right(
+          HttpException(
+            errorResponsedMessage ?? response.data.toString(),
+          ),
+        );
       }
     } catch (error) {
       _logger?.e('Exception: ${error.toString()}');

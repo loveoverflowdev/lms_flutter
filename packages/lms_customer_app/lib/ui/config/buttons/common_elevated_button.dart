@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AuthButton extends StatelessWidget {
+class CommonElevatedButton extends StatelessWidget {
   final void Function() onPressed;
 
   final String title;
-  const AuthButton({
+  const CommonElevatedButton({
     super.key,
     required this.title,
     required this.onPressed,

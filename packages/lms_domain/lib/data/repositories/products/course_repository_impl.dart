@@ -11,13 +11,24 @@ class CourseRepositoryImpl
     implements CourseRepository {
   @override
   Future<Either<List<Course>, Exception>> getCourseListOnTop() async {
-    final response = await get(ApiUris.topCourseListUrl);
+    final response = await get(ApiUris.topCourseList);
     return response.bimap(
       (l) {
         final objects = l['data'];
         return objects is Iterable
             ? objects.map((e) => DataCourse.fromMap(e).toEntity()).toList()
             : [];
+      },
+      (r) => r,
+    );
+  }
+
+  @override
+  Future<Either<Course, Exception>> getCourse(String id) async {
+    final response = await get("${ApiUris.course}/$id");
+    return response.bimap(
+      (l) {
+        return DataCourse.fromMap(l['data']).toEntity();
       },
       (r) => r,
     );
