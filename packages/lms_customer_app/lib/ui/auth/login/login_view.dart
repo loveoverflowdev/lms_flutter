@@ -14,6 +14,7 @@ import '../config/input_field/auth_input_field.dart';
 
 extension LoginViewActions on LoginView {
   void onLoginSuccess(BuildContext context) {
+    EasyLoading.showInfo('Đăng ký thành công');
     context.go(
       AppRouter.home,
     );
@@ -24,21 +25,8 @@ extension LoginViewActions on LoginView {
   }
 }
 
-class LoginView extends StatefulWidget {
+class LoginView extends StatelessWidget {
   const LoginView({super.key});
-
-  @override
-  State<LoginView> createState() => _LoginViewViewState();
-}
-
-class _LoginViewViewState extends State<LoginView> {
-  late final AuthCubit _authCubit;
-
-  @override
-  void initState() {
-    super.initState();
-    _authCubit = context.read<AuthCubit>();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,16 +53,17 @@ class _LoginViewViewState extends State<LoginView> {
                 ),
                 const SizedBox(height: 16),
                 AuthInputField(
-                  labelText: 'Email or Username',
+                  labelText: 'Tên đăng nhập hoặc Email',
                   onChanged: (value) {
-                    _authCubit.changeUsernameOrEmail(value);
+                    context.read<AuthCubit>().changeUsernameOrEmail(value);
                   },
                 ),
                 const SizedBox(height: 8),
                 AuthInputField(
-                  labelText: 'Password',
+                  obscureText: true,
+                  labelText: 'Mật khẩu',
                   onChanged: (value) {
-                    _authCubit.changePassword(value);
+                    context.read<AuthCubit>().changePassword(value);
                   },
                 ),
                 const SizedBox(height: 8),
@@ -84,10 +73,10 @@ class _LoginViewViewState extends State<LoginView> {
                     listener: (context, state) {
                       switch (state.loadingStatus) {
                         case LoadingStatus.error:
-                          widget.onLoginFailure(context, state.message);
+                          onLoginFailure(context, state.message);
                           break;
                         case LoadingStatus.success:
-                          widget.onLoginSuccess(context);
+                          onLoginSuccess(context);
                           break;
                         default:
                           break;
@@ -101,10 +90,10 @@ class _LoginViewViewState extends State<LoginView> {
                     builder: (context, state) {
                       return Visibility(
                         replacement: const LoadingWidget(),
-                        visible: state.loadingStatus != LoadingStatus.error,
+                        visible: state.loadingStatus != LoadingStatus.loading,
                         child: AuthButton(
                           onPressed: () {
-                            _authCubit.logIn();
+                            context.read<AuthCubit>().logIn();
                           },
                           title: LocalizedTexts.logIn,
                         ),

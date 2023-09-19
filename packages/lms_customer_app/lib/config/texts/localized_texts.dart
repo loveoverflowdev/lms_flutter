@@ -8,6 +8,8 @@ class LocalizedTexts {
   static const signUp = 'Đăng ký';
   static const logOut = 'Đăng xuất';
   static const logInToCSKH = 'Đăng nhập vào Chia sẻ khóa học';
+  static const signUpToCSKH = 'Đăng ký Tài khoản khách hàng mới';
+  static const signUpSuccess = 'Đăng ký tài khoản thành công';
 
   //
   static const responsiveness = 'Responsiveness';

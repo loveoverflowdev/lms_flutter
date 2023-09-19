@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lms_customer_app/ui/config/app_bar/web/custom/profile_button.dart';
+import 'package:go_router/go_router.dart';
+import 'package:lms_customer_app/config/app/app_router.dart';
 
 import '../../../../config/assets/app_assets.dart';
 import '../../../../config/texts/localized_texts.dart';
@@ -7,6 +8,13 @@ import '../../../../config/theme/colors/app_colors.dart';
 import 'custom/auth_button_row.dart';
 import 'custom/cart_icon_button.dart';
 import 'custom/app_bar_search_field.dart';
+import 'custom/profile_button.dart';
+
+extension WebAppBarActions on WebAppBar {
+  void routeToHomePage(BuildContext context) {
+    context.go(AppRouter.home);
+  }
+}
 
 class WebAppBar extends StatelessWidget {
   const WebAppBar({
@@ -20,14 +28,21 @@ class WebAppBar extends StatelessWidget {
       toolbarHeight: 80,
       title: Row(
         children: [
-          Image.asset(
-            AppAssets.logo,
-            height: 40,
-            width: 40,
-          ),
-          const Text(
-            LocalizedTexts.cskh,
-            style: TextStyle(fontWeight: FontWeight.w800),
+          GestureDetector(
+            onTap: () => routeToHomePage(context),
+            child: Row(
+              children: [
+                Image.asset(
+                  AppAssets.logo,
+                  height: 40,
+                  width: 40,
+                ),
+                const Text(
+                  LocalizedTexts.cskh,
+                  style: TextStyle(fontWeight: FontWeight.w800),
+                ),
+              ],
+            ),
           ),
           const SizedBox(width: 12),
           const Expanded(child: AppBarSearchField()),

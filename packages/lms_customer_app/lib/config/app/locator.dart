@@ -13,6 +13,9 @@ void registerUseCases() {
     CustomerLoginUseCase(authRepository: _authRepository),
   );
   _getIt.registerSingleton(
+    CustomerSignupUseCase(authRepository: _authRepository),
+  );
+  _getIt.registerSingleton(
     GetCourseListOnTopUseCase(courseRepository: _courseRepository),
   );
 }

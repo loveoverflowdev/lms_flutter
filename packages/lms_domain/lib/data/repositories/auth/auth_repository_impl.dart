@@ -42,8 +42,22 @@ class AuthRepositoryImpl with NetworkServiceMixin implements AuthRepository {
     required String email,
     required String password,
     required String phoneNumber,
-  }) {
-    // TODO: implement customerSignUp
-    throw UnimplementedError();
+  }) async {
+    final response = await post(
+      ApiUris.customerSignupUrl,
+      data: {
+        "username": username,
+        "email": email,
+        "password": password,
+        "phoneNumber": phoneNumber,
+      },
+    );
+    return response.bimap(
+      (l) {
+        final customer = DataCustomer.fromMap(l['data']).toEntity();
+        return CustomerSignupResult(customer: customer);
+      },
+      (r) => r,
+    );
   }
 }
