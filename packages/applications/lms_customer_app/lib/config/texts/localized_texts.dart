@@ -18,6 +18,7 @@ class LocalizedTexts {
   static const buyNow = 'Mua ngay';
   static const addToCartSuccess = 'Thêm vào giỏ hàng thành công';
   static const checkout = 'Thanh toán';
+  static const removeCourseFromCart = 'Xóa khỏi giỏ';
 
   //
   static const responsiveness = 'Responsiveness';

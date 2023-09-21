@@ -40,7 +40,10 @@ class CartRepositoryImpl with NetworkServiceMixin implements CartRepository {
     String courseId, {
     required String accessToken,
   }) async {
-    final response = await delete(ApiUris.courseInCustomerCart);
+    final response = await delete(
+      "${ApiUris.courseInCustomerCart}/$courseId",
+      headers: {'Authorization': 'Bearer $accessToken'},
+    );
     return response.bimap((l) => l, (r) => r);
   }
 }

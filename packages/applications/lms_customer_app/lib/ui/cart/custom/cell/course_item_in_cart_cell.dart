@@ -1,46 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lms_customer_app/config/texts/localized_texts.dart';
+import 'package:lms_domain/domain/entities/products/course.dart';
 
-// class CartItemCell extends StatelessWidget {
-//   final Course course;
+import '../../../../view_models/cart/courses_in_cart/courses_in_cart_cubit.dart';
 
-//   const CartItemCell({
-//     super.key,
-//     required this.course,
-//   });
+extension CourseItemInCartCellAction on CourseItemInCartCell {
+  void removeCartItem(BuildContext context, String courseId) {
+    context.read<CoursesInCartCubit>().removeCourseByIdFromCart(courseId);
+  }
+}
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListTile(
-//       leading: Image.network(
-//         course.coverImage,
-//         fit: BoxFit.cover,
-//       ),
-//       title: Text(
-//         course.title,
-//         style: const TextStyle(fontWeight: FontWeight.bold),
-//         maxLines: 1,
-//       ),
-//       subtitle: Text(
-//         course.description,
-//         maxLines: 2,
-//       ),
-//     );
-//   }
-// }
-
-class CartItemCell extends StatelessWidget {
-  const CartItemCell({
+class CourseItemInCartCell extends StatelessWidget {
+  final Course course;
+  const CourseItemInCartCell({
     super.key,
-    required this.coverImage,
-    required this.title,
-    required this.description,
-    required this.author,
+    required this.course,
   });
-
-  final Widget coverImage;
-  final String title;
-  final String description;
-  final String author;
 
   @override
   Widget build(BuildContext context) {
@@ -53,15 +29,36 @@ class CartItemCell extends StatelessWidget {
           children: <Widget>[
             AspectRatio(
               aspectRatio: 3 / 2,
-              child: coverImage,
+              child: Image.network(
+                course.coverImage,
+                fit: BoxFit.cover,
+              ),
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
-                child: _ArticleDescription(
-                  title: title,
-                  description: description,
-                  author: author,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(
+                      child: _ArticleDescription(
+                        title: course.title,
+                        description: course.description,
+                        author: course.instructor,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () => removeCartItem(context, course.id),
+                        child: const Text(
+                          LocalizedTexts.removeCourseFromCart,
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),

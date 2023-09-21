@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:lms_customer_app/config/status/loading_status.dart';
 
 import '../../../view_models/cart/courses_in_cart/courses_in_cart_cubit.dart';
 import '../../../view_models/cart/courses_in_cart/courses_in_cart_state.dart';
-import 'cart_item_cell.dart';
+import 'cell/course_item_in_cart_cell.dart';
+
+extension CartItemListViewAction on CartItemListView {
+  void coursesInCartModifyingListener(
+      BuildContext context, CoursesInCartState state) {
+    switch (state.loadingStatus) {
+      case LoadingStatus.loading:
+        EasyLoading.show();
+      default:
+        EasyLoading.dismiss();
+    }
+  }
+}
 
 class CartItemListView extends StatelessWidget {
   const CartItemListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CoursesInCartCubit, CoursesInCartState>(
+    return BlocConsumer<CoursesInCartCubit, CoursesInCartState>(
+      listener: coursesInCartModifyingListener,
       builder: (context, state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,14 +48,8 @@ class CartItemListView extends StatelessWidget {
                       top: BorderSide(color: Theme.of(context).dividerColor),
                     ),
                   ),
-                  child: CartItemCell(
-                    title: course.title,
-                    author: course.instructor,
-                    description: course.description,
-                    coverImage: Image.network(
-                      course.coverImage,
-                      fit: BoxFit.cover,
-                    ),
+                  child: CourseItemInCartCell(
+                    course: course,
                   ),
                 );
               },

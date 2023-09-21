@@ -16,12 +16,12 @@ import '../../view_models/courses/course_detail_cubit/course_detail_state.dart';
 import '../../view_models/courses/course_detail_cubit/course_detail_cubit.dart';
 
 extension CourseDetailViewActions on CourseDetailView {
-  void addToCart(BuildContext context, Course course) {
+  void addToCart(BuildContext context, String courseId) {
     final token = context.read<AuthCubit>().state.loginResult?.accessToken;
     if (token != null) {
       context.read<CoursesInCartCubit>()
         ..setAccessToken(token)
-        ..addCourseByIdToCart(course.id);
+        ..addCourseByIdToCart(courseId);
     } else {
       context.go(AppRouter.login);
     }
@@ -92,7 +92,7 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                               outlined: true,
                               title: LocalizedTexts.addToCart,
                               onPressed: () =>
-                                  widget.addToCart(context, course),
+                                  widget.addToCart(context, course.id),
                             ),
                           ),
                           const SizedBox(height: 16),
