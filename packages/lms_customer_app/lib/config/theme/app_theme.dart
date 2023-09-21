@@ -6,6 +6,7 @@ class AppThemes {
   static final primary = ThemeData(
     primarySwatch: AppColors.blue,
     scaffoldBackgroundColor: AppColors.lotion,
+    dividerColor: AppColors.grayX11,
     appBarTheme: const AppBarTheme(
       titleTextStyle: TextStyle(
         color: AppColors.black87,

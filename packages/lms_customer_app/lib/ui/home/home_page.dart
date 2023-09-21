@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lms_domain/domain/entities/customer_entities.dart';
+import 'package:lms_domain/domain/entities/users/customer.dart';
 
 import '../../../config/responsive/breakpoints.dart';
 import '../../../view_models/courses/top_course_list_cubit/top_course_list_cubit.dart';

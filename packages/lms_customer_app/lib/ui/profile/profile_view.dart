@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lms_customer_app/config/app/app_router.dart';
 import 'package:lms_customer_app/config/texts/localized_texts.dart';
-import 'package:lms_domain/domain/entities/customer_entities.dart';
+import 'package:lms_domain/domain/entities/users/customer.dart';
 import 'package:text_avatar/text_avatar.dart';
 
 import '../../config/theme/colors/app_colors.dart';

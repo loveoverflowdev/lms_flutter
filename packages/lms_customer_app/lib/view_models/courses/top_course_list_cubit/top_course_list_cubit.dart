@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lms_domain/data/repositories/repositories.dart';
+import 'package:lms_domain/data/repositories/products/course_repository_impl.dart';
 
 import '../../../config/status/loading_status.dart';
 import 'top_course_list_state.dart';

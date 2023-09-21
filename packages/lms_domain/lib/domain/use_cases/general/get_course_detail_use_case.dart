@@ -2,9 +2,9 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:lms_domain/core/use_case/use_case.dart';
-import 'package:lms_domain/data/repositories/repositories.dart';
 
 import '../../entities/products/course.dart';
+import '../../repositories/products/course_repository.dart';
 
 class GetCourseDetailParams {
   final String id;

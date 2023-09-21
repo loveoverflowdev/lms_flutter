@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 import 'package:lms_customer_app/config/status/loading_status.dart';
-import 'package:lms_domain/domain/entities/customer_entities.dart';
+import 'package:lms_domain/domain/entities/users/customer.dart';
 
 class SignupState extends Equatable {
   final LoadingStatus loadingStatus;

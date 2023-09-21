@@ -8,8 +8,16 @@ class LocalizedTexts {
   static const signUp = 'Đăng ký';
   static const logOut = 'Đăng xuất';
   static const logInToCSKH = 'Đăng nhập vào Chia sẻ khóa học';
+  static const logInSuccess = 'Đăng nhập thành công';
   static const signUpToCSKH = 'Đăng ký Tài khoản khách hàng mới';
   static const signUpSuccess = 'Đăng ký tài khoản thành công';
+
+  // Shopping
+  static const cart = 'Giỏ hàng';
+  static const addToCart = 'Thêm vào giỏ hàng';
+  static const buyNow = 'Mua ngay';
+  static const addToCartSuccess = 'Thêm vào giỏ hàng thành công';
+  static const checkout = 'Thanh toán';
 
   //
   static const responsiveness = 'Responsiveness';

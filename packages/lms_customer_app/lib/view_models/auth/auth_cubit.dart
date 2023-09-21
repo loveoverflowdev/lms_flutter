@@ -1,5 +1,5 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:lms_domain/domain/use_cases/customer_use_cases.dart';
+import 'package:lms_domain/domain/use_cases/customer/auth/customer_login_use_case.dart';
 
 import '../../../config/status/loading_status.dart';
 import 'auth_state.dart';

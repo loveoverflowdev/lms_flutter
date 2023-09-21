@@ -24,14 +24,27 @@ class ProfileButton extends StatelessWidget {
       builder: (context, state) {
         final isAuthorized = state.isAuthoried;
         final customer = state.loginResult?.customer;
+        final displayName = customer?.displayName;
+        final primaryCoins = customer?.primaryCoins ?? 0;
         return Visibility(
           visible: isAuthorized,
           child: GestureDetector(
             onTap: () => routeToProfilePage(context),
-            child: TextAvatarWidget(
-              shape: Shape.circular,
-              size: 48,
-              text: customer?.displayName,
+            child: Row(
+              children: [
+                TextAvatarWidget(
+                  shape: Shape.circular,
+                  size: 48,
+                  text: displayName,
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  "$primaryCoins Coins",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+              ],
             ),
           ),
         );

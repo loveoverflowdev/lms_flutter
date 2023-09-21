@@ -8,13 +8,15 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          WebAppBar(),
-          SizedBox(height: 24),
-          ProfileView(),
-        ],
+    return const Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            WebAppBar(),
+            SizedBox(height: 24),
+            ProfileView(),
+          ],
+        ),
       ),
     );
   }

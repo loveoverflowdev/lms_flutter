@@ -1,29 +1,31 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
+import 'package:lms_customer_app/config/status/loading_status.dart';
 import 'package:lms_domain/domain/entities/products/course.dart';
 
-import '../../../config/status/loading_status.dart';
-
-class TopCourseListState extends Equatable {
+class CoursesInCartState extends Equatable {
   final LoadingStatus loadingStatus;
   final List<Course> courseList;
   final String message;
+  final String accessToken;
 
-  const TopCourseListState({
+  const CoursesInCartState({
     this.loadingStatus = LoadingStatus.pure,
     this.courseList = const [],
     this.message = '',
+    this.accessToken = '',
   });
 
-  TopCourseListState copyWith({
+  CoursesInCartState copyWith({
     LoadingStatus? loadingStatus,
     List<Course>? courseList,
     String? message,
+    String? accessToken,
   }) {
-    return TopCourseListState(
+    return CoursesInCartState(
       loadingStatus: loadingStatus ?? this.loadingStatus,
       courseList: courseList ?? this.courseList,
       message: message ?? this.message,
+      accessToken: accessToken ?? this.accessToken,
     );
   }
 

@@ -6,10 +6,11 @@ class AppColors {
   static const cultured = Color(0XFFF5F5F5);
   static const grayX11 = Color(0XFFBDBDBD);
   static const graniteGray = Color(0XFF616161);
-  static const buttonBlue = Color(0xFF2196F3);
+  static const buttonBlue = Color(0xFF005A9C);
   static const vampireBlack = Color(0XFF0A0A0A);
   static const black87 = Color(0XDD000000);
   static const sonicSilver = Color(0XFF757575);
+  static const gray = Colors.grey;
   static const white = Color(0XFFFFFFFF);
 
   // Flutter Config for `Colors.blue` and use `AppColors.blue`

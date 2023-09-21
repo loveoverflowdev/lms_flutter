@@ -1,14 +1,40 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:lms_customer_app/config/app/app_router.dart';
 import 'package:lms_customer_app/config/status/loading_status.dart';
+import 'package:lms_customer_app/config/texts/localized_texts.dart';
 import 'package:lms_customer_app/config/widgets/loading_widget.dart';
 import 'package:lms_customer_app/ui/config/buttons/common_elevated_button.dart';
-import 'package:lms_customer_app/view_models/courses/course_detail_cubit/course_detail_cubit.dart';
-import 'package:lms_domain/domain/entities/customer_entities.dart';
+import 'package:lms_customer_app/view_models/auth/auth_cubit.dart';
+import 'package:lms_customer_app/view_models/cart/courses_in_cart/courses_in_cart_cubit.dart';
+import 'package:lms_domain/domain/entities/products/course.dart';
 
 import '../../config/theme/colors/app_colors.dart';
 import '../../view_models/courses/course_detail_cubit/course_detail_state.dart';
+import '../../view_models/courses/course_detail_cubit/course_detail_cubit.dart';
+
+extension CourseDetailViewActions on CourseDetailView {
+  void addToCart(BuildContext context, Course course) {
+    final token = context.read<AuthCubit>().state.loginResult?.accessToken;
+    if (token != null) {
+      context.read<CoursesInCartCubit>()
+        ..setAccessToken(token)
+        ..addCourseByIdToCart(course.id);
+    } else {
+      context.go(AppRouter.login);
+    }
+  }
+
+  void buyNow(BuildContext context, Course course) {
+    final isAuthoried = context.read<AuthCubit>().state.isAuthoried;
+    if (isAuthoried) {}
+    {
+      context.go(AppRouter.login);
+    }
+  }
+}
 
 class CourseDetailView extends StatefulWidget {
   final String? courseId;
@@ -63,16 +89,18 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                           SizedBox(
                             height: 48,
                             child: CommonElevatedButton(
-                              title: 'Thêm vào giỏ hàng',
-                              onPressed: () {},
+                              outlined: true,
+                              title: LocalizedTexts.addToCart,
+                              onPressed: () =>
+                                  widget.addToCart(context, course),
                             ),
                           ),
                           const SizedBox(height: 16),
                           SizedBox(
                             height: 48,
                             child: CommonElevatedButton(
-                              title: 'Mua ngay',
-                              onPressed: () {},
+                              title: LocalizedTexts.buyNow,
+                              onPressed: () => widget.buyNow(context, course),
                             ),
                           ),
                         ],

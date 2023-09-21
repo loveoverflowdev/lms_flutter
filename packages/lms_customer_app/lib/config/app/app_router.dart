@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:lms_customer_app/ui/cart/cart_page.dart';
 import 'package:lms_customer_app/ui/profile/profile_page.dart';
 
 import '../../ui/auth/login/login_page.dart';
@@ -12,6 +13,7 @@ class AppRouter {
   static const login = '/login';
   static const signup = '/signup';
   static const profile = '/profile';
+  static const customerCart = '/customer-cart';
   static const courseDetail = '/course-detail';
 
   static final GoRouter router = GoRouter(
@@ -59,6 +61,14 @@ class AppRouter {
                 params: CourseDetailPageParams(
               courseId: courseId,
             )),
+          );
+        },
+      ),
+      GoRoute(
+        path: customerCart,
+        pageBuilder: (context, state) {
+          return PageTransition.fade(
+            page: const CartPage(),
           );
         },
       )

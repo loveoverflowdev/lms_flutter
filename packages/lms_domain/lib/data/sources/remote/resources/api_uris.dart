@@ -8,4 +8,10 @@ class ApiUris {
   // Auth
   static const customerLogin = "$base/authentication/customer/login";
   static const customerSignup = "$base/authentication/customer/register";
+
+  // Customer
+  static const courseInCustomerCart = '$base/customer-cart/course';
+  static const courseListInCustomerCart = '$base/customer-cart/course-list';
+
+  // Admin
 }

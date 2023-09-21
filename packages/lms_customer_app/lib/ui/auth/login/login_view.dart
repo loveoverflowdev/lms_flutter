@@ -14,7 +14,7 @@ import '../config/input_field/auth_input_field.dart';
 
 extension LoginViewActions on LoginView {
   void onLoginSuccess(BuildContext context) {
-    EasyLoading.showInfo('Đăng ký thành công');
+    EasyLoading.showInfo(LocalizedTexts.logInSuccess);
     context.go(
       AppRouter.home,
     );

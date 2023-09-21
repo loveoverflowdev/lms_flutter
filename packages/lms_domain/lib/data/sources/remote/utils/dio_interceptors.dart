@@ -9,7 +9,8 @@ class AppInterceptors extends InterceptorsWrapper {
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    String messageError = err.toString();
+    String? messageError =
+        err.response?.data['status']?['message'] ?? err.toString();
 
     switch (err.type) {
       case DioExceptionType.connectionTimeout:
@@ -19,18 +20,23 @@ class AppInterceptors extends InterceptorsWrapper {
       case DioExceptionType.badResponse:
         switch (err.response?.statusCode) {
           case 400:
-            throw BadRequestException(err.requestOptions,
-                message: messageError);
+            err =
+                BadRequestException(err.requestOptions, message: messageError);
+            break;
           case 401:
-            throw UnauthorizedException(err.requestOptions,
+            err = UnauthorizedException(err.requestOptions,
                 message: messageError);
+            break;
           case 404:
-            throw NotFoundException(err.requestOptions, message: messageError);
+            err = NotFoundException(err.requestOptions, message: messageError);
+            break;
           case 409:
-            throw ConflictException(err.requestOptions, message: messageError);
+            err = ConflictException(err.requestOptions, message: messageError);
+            break;
           case 500:
-            throw InternalServerErrorException(err.requestOptions,
+            err = InternalServerErrorException(err.requestOptions,
                 message: messageError);
+            break;
         }
         break;
       case DioExceptionType.cancel:
@@ -38,10 +44,11 @@ class AppInterceptors extends InterceptorsWrapper {
         break;
       case DioExceptionType.unknown:
       case DioExceptionType.connectionError:
-        throw NoInternetConnectionException(
+        err = NoInternetConnectionException(
           err.requestOptions,
           message: messageError,
         );
+        break;
     }
     return handler.next(err);
   }

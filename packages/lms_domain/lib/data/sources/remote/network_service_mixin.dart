@@ -14,19 +14,27 @@ mixin NetworkServiceMixin {
   Future<Either> get(
     String path, {
     Map<String, dynamic>? params,
-    bool v2 = false,
+    Map<String, dynamic>? headers,
   }) async {
-    final response = RestClient().getDio().get(path, queryParameters: params);
+    final response = RestClient().getDio().get(
+          path,
+          queryParameters: params,
+          options: headers != null ? Options(headers: headers) : null,
+        );
     return _handleResponse(response);
   }
 
   Future<Either> post(
     String path, {
-    required Map<String, dynamic> data,
+    Map<String, dynamic>? data,
     bool enableCache = false,
-    bool v2 = false,
+    Map<String, dynamic>? headers,
   }) async {
-    final response = RestClient().getDio().post(path, data: data);
+    final response = RestClient().getDio().post(
+          path,
+          data: data,
+          options: headers != null ? Options(headers: headers) : null,
+        );
     return _handleResponse(response);
   }
 
@@ -34,7 +42,7 @@ mixin NetworkServiceMixin {
   //   String path, {
   //   required File file,
   //   bool enableCache = false,
-  //   bool v2 = false,
+  //
   // }) async {
   //   final fileName = file.path.split('/').last;
   //   FormData formData = FormData.fromMap({
@@ -48,28 +56,38 @@ mixin NetworkServiceMixin {
 
   Future<Either> put(
     String path, {
-    data,
-    bool v2 = false,
+    required Map<String, dynamic> data,
+    Map<String, dynamic>? headers,
   }) async {
-    final response = RestClient().getDio().put(path, data: data);
+    final response = RestClient().getDio().put(
+          path,
+          data: data,
+          options: headers != null ? Options(headers: headers) : null,
+        );
     return _handleResponse(response);
   }
 
   Future<Either> delete(
     String path, {
-    data,
-    bool v2 = false,
+    Map<String, dynamic>? headers,
   }) async {
-    final response = RestClient().getDio().delete(path, data: data);
+    final response = RestClient().getDio().delete(
+          path,
+          options: headers != null ? Options(headers: headers) : null,
+        );
     return _handleResponse(response);
   }
 
   Future<Either> postUpload(
     String path, {
-    data,
-    bool v2 = false,
+    required Map<String, dynamic> data,
+    Map<String, dynamic>? headers,
   }) async {
-    final response = RestClient().getDio().post(path, data: data);
+    final response = RestClient().getDio().post(
+          path,
+          data: data,
+          options: headers != null ? Options(headers: headers) : null,
+        );
     return _handleResponse(response);
   }
 
@@ -99,7 +117,9 @@ mixin NetworkServiceMixin {
       }
     } catch (error) {
       _logger?.e('Exception: ${error.toString()}');
-      final errorStr = error.runtimeType.toString();
+      final errorStr = (error is DioException
+          ? error.message ?? error.toString()
+          : error.toString());
       return Right(HttpException(errorStr));
     }
   }
