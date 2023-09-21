@@ -46,9 +46,9 @@ dependencies:
   easy_debounce: ^2.0.3
   
   lms_domain:
-    path: ../lms_domain
+    path: ../../infrastructure/lms_domain
   text_avatar:
-    path: ../text_avatar
+    path: ../../infrastructure/text_avatar
 
 dev_dependencies:
   flutter_test:

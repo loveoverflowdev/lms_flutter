@@ -42,6 +42,7 @@ class _CartViewState extends State<CartView> {
             ),
           ),
           const SizedBox(height: 24),
+          
           Flexible(
             child: Wrap(
               direction: Axis.horizontal,

@@ -315,21 +315,21 @@ packages:
   lms_admin_app:
     dependency: "direct main"
     description:
-      path: "packages/lms_admin_app"
+      path: "packages/applications/lms_admin_app"
       relative: true
     source: path
     version: "0.0.1"
   lms_customer_app:
     dependency: "direct main"
     description:
-      path: "packages/lms_customer_app"
+      path: "packages/applications/lms_customer_app"
       relative: true
     source: path
     version: "0.0.1"
   lms_domain:
     dependency: transitive
     description:
-      path: "packages/lms_domain"
+      path: "packages/infrastructure/lms_domain"
       relative: true
     source: path
     version: "0.0.1"
@@ -549,7 +549,7 @@ packages:
   text_avatar:
     dependency: transitive
     description:
-      path: "packages/text_avatar"
+      path: "packages/infrastructure/text_avatar"
       relative: true
     source: path
     version: "0.0.1"
