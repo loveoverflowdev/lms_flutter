@@ -50,9 +50,4 @@ class CartItemListView extends StatelessWidget {
       },
     );
   }
-
-  Text _buildCourseIndex(int index) => Text(
-        index.toString(),
-        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
-      );
 }

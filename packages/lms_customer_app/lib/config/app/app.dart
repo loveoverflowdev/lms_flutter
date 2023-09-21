@@ -25,6 +25,7 @@ class App extends StatelessWidget {
           create: (_) => CoursesInCartCubit(
             addCourseToCartUseCase: GetIt.instance.get(),
             getCourseListInCartUseCase: GetIt.instance.get(),
+            removeCourseFromCartUseCase: GetIt.instance.get(),
           ),
         ),
       ],

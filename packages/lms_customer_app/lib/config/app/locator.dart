@@ -8,6 +8,7 @@ import 'package:lms_domain/domain/use_cases/customer/auth/customer_login_use_cas
 import 'package:lms_domain/domain/use_cases/customer/auth/customer_signup_use_case.dart';
 import 'package:lms_domain/domain/use_cases/customer/cart/add_course_to_cart_use_case.dart';
 import 'package:lms_domain/domain/use_cases/customer/cart/get_course_list_in_cart_use_case.dart';
+import 'package:lms_domain/domain/use_cases/customer/cart/remove_course_from_cart_use_case.dart';
 import 'package:lms_domain/domain/use_cases/general/get_course_detail_use_case.dart';
 import 'package:lms_domain/domain/use_cases/general/get_course_list_on_top_use_case.dart';
 
@@ -35,5 +36,8 @@ void registerUseCases() {
   );
   _getIt.registerSingleton(
     GetCourseListInCartUseCase(cartRepository: _cartRepository),
+  );
+  _getIt.registerSingleton(
+    RemoveCourseFromCartUseCase(cartRepository: _cartRepository),
   );
 }
